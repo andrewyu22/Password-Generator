@@ -13,7 +13,7 @@ function passwordLength()
   // Prompt Users to Input the length
   var length = window.prompt("Please input the length of the password.");
   // If they enter nothing / Null 
-  if (length === "" || length === null) 
+  if (length === "" || length === null || isNaN(length)) 
   {
     window.alert("You need to provide a valid length. Please try again");
     return passwordLength();
