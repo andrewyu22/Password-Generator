@@ -27,8 +27,6 @@ function passwordLength()
 }
 // Get users Criteria (If all are false Loop again)
 function getUsersOption() {
-
-  // var combineArray = [];
   var option = 
   {
     combineArray: [],
@@ -43,20 +41,28 @@ function getUsersOption() {
     window.alert("Password needs to include at least one of the following Options.");
     return getUsersOption();
   }
+  // If hasLowerCase is true
   if (option.hasLowerCase) 
   {
+    // Concat Global LowCasedCharacters Array to combineArray 
     option.combineArray = option.combineArray.concat(lowerCasedCharacters);
   }
+  // If hasNumber is true
   if (option.hasNumber) 
   {
+    // Concat Global Numeric Array to combineArray 
     option.combineArray = option.combineArray.concat(numericCharacters);
   }
+  // If hasUpperCase is true
   if (option.hasUpperCase) 
   {
+    // Concat Global upperCasedCharacters Array to combineArray
     option.combineArray = option.combineArray.concat(upperCasedCharacters);
   }
+  // If hasSpecialChar is true
   if (option.hasSpecialChar) 
   {
+    // Concat Global specialCharacters Array to combineArray
     option.combineArray = option.combineArray.concat(specialCharacters);
   }
   return option;
@@ -74,14 +80,18 @@ var generatePassword = function ()
 {
   var length = passwordLength();
   var charArrays = getUsersOption();
+  // Password function
   var password = function () 
   {
     var temp = [];
     var result = "";
+    // While the Array is not equal to length input by users
     while (temp.length != length) 
     {
+      // Random generate a Character from combineArry until it reach user's length
       temp.push(randomGenerateChar(charArrays.combineArray));
     }
+    // Case check to make sure at least one of the characters meets the criteria users. If not restart the function again.
     if(charArrays.hasLowerCase)
     {
       if(!temp.some(x => lowerCasedCharacters.indexOf(x) > -1))
@@ -110,7 +120,9 @@ var generatePassword = function ()
         return password();
       }
     }
+    // Combine the Array into a string
     result = temp.join('');
+    // return the string
     return result;
   }
   return password();
