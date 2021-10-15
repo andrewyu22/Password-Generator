@@ -23,14 +23,14 @@ Link: https://andrewyu22.github.io/Password-Generator/
 
 ## Usage
 
-![alt text](assets/images/generate-password.JPG)
+![generate-password](assets/images/generate-password.JPG)
 
-![alt text](assets/images/length.JPG)
+![enter-length](assets/images/length.JPG)
 
-![alt text](assets/images/password.JPG)
+![password](assets/images/password.JPG)
 
 ## Credits
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
-![alt text](assets/images/test-array.JPG)
+![test-array](assets/images/test-array.JPG)
