@@ -91,7 +91,7 @@ var generatePassword = function ()
       // Random generate a Character from combineArry until it reach user's length
       temp.push(randomGenerateChar(charArrays.combineArray));
     }
-    // Case check to make sure at least one of the characters meets the criteria users. If not restart the function again.
+    // Case check to make sure at least one of the characters in the temp array meets the criteria users. If not restart the function again.
     if(charArrays.hasLowerCase)
     {
       if(!temp.some(x => lowerCasedCharacters.indexOf(x) > -1))
